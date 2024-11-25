@@ -1,0 +1,18 @@
+.form {
+  max-width: 320px;
+  margin: 0 auto;
+}
+fieldset {
+  width: 100%;
+  box-sizing: border-box;
+}
+button {
+  width: 100%;
+  display: block;
+  padding: 4px;
+  font-size: 16px;
+  background-color: #bfc1c4;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+}

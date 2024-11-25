@@ -2,6 +2,9 @@
 import iziToast from 'izitoast';
 // Додатковий імпорт стилів
 import 'izitoast/dist/css/iziToast.min.css';
+iziToast.settings({
+  position: 'topRight',
+});
 
 const form = document.querySelector('.form');
 
@@ -14,11 +17,7 @@ function onClick(event) {
   let delayMs = delay.value;
 
   const selectedRadioValue = radio.value;
-  console.log('selectedRadioValue', selectedRadioValue);
-  iziToast.info({
-    title: 'Info',
-    message: 'selectedRadioValue' + selectedRadioValue,
-  });
+  //console.log('selectedRadioValue', selectedRadioValue);
   promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (selectedRadioValue === 'fulfilled') {
@@ -30,15 +29,19 @@ function onClick(event) {
   });
   promise
     .then(value =>
-      iziToast.info({
-        title: 'Info',
+      iziToast.success({
+        title: 'OK',
         message: value,
       })
-    ) // "Success! Value passed to resolve function"
+    )
     .catch(value =>
       iziToast.error({
         title: 'Error',
         message: value,
       })
-    ); // "Error! Error passed to reject function"
+    ) // "Error! Error passed to reject function"
+    .finally(() => {
+      console.log('Promise settled');
+      form.reset();
+    });
 }
