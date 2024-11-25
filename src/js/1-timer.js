@@ -11,6 +11,9 @@ import 'flatpickr/dist/flatpickr.min.css';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+iziToast.settings({
+  position: 'topRight',
+});
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time

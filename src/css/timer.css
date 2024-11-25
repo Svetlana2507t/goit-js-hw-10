@@ -35,3 +35,20 @@ body {
   color: #555;
   text-transform: uppercase;
 }
+.input-container {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+  justify-content: center;
+  gap: 10px; /* Space between items */
+  height: 60px; /* Set a height for demonstration */
+  width: 100%;
+}
+
+button[data-start] {
+  cursor: pointer;
+  width: 20%;
+  margin: 0;
+}
+input {
+  padding: 4px;
+}
